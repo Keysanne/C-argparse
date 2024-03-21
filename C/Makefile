@@ -1,9 +1,11 @@
 NAME= argparse
 COMPILER= gcc 
 OBJS=	${FILES:.c=.o}
-FILES=	argparse.c \
-		main.c		\
-		utils.c
+FILES=	arg.c	\
+		main.c	 \
+		utils.c	  \
+		argparse.c \
+		arg_start.c	   
 
 all: ${NAME}
 

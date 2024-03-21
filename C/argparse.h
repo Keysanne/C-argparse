@@ -27,17 +27,23 @@ typedef struct  options
     char    *opt;
     char    *fullname_opt;
     int     type;
+    bool    is_here;
 }   options;
 
-arg_opt init(int argc, char **argv);
-void	free_options(arg_opt tab);
+arg_opt arg_init(int argc, char **argv);
+void    arg_start(arg_opt *tab);
+void	arg_end(arg_opt tab);
 bool    init_options(arg_opt *tab, char opt, char *fullname_opt, int type);
 void    *find_options(arg_opt *tab, char *opt);
 char    *strjoin(char *s1, char *s2);
-bool check_opt(char opt);
+bool    check_opt(char opt);
+bool    multiple_flags(options opt, char *arg, arg_opt *tab);
 bool    valid_str(char *str);
 bool    valid_float(char *str);
 char*   to_str(char c);
 bool    valid_int(char *str);
+void    update_arg(arg_opt *tab, int j, int type);
+bool    is_multiple_flags(char **arg, int x, arg_opt tab);
+void    multiple_definition(arg_opt *tab, int i, int *valid);
 
 #endif
