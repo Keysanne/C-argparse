@@ -57,7 +57,7 @@ Argparse_C
 - Examples
     
     ```bash
-    ./program -i 15 -f 1.0
+    ./program -i 15 -f 1.5
     
     ./program -bc test
     	
