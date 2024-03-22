@@ -15,10 +15,10 @@ Argparse_C
     options = arg_init(argc, argv);
     /*Add the options needed with 
     init_options(arg_opt *options, char flag, char *fullname, int type)*/
-    init_options(&options, 'b', "bool", BOOL);
-    init_options(&options, 'i', "int", INT);
-    init_options(&options, 'c', "char", CHAR);
-    init_options(&options, 'f', "float", FLOAT);
+    init_options(&options, 'b', "booleanFlag", BOOL);
+    init_options(&options, 'i', "intFlag", INT);
+    init_options(&options, 'c', "charFlag", CHAR);
+    init_options(&options, 'f', "floatFlag", FLOAT);
     //  BOOL  -> for a boolean
     //  INT   -> for an int
     //  CHAR  -> for a char*
@@ -61,6 +61,6 @@ Argparse_C
     
     ./program -bc test
     	
-    ./program --bool --int 10
+    ./program --booleanFlag --intFlag 10
     
     ```
