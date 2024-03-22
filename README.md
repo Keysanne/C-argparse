@@ -54,14 +54,13 @@ Argparse_C
     /* To free all the struct */
     ```
 
-- Use
+- Examples
     
     ```bash
     ./program -i 15 -f 1.0
+    
     ./program -bc test
-    	->with the options names
     	
     ./program --bool --int 10
-    	->with the options fullname
     
     ```
