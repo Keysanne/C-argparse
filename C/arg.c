@@ -1,5 +1,4 @@
 #include "argparse.h"
-#include <stdbool.h>
 
 arg_opt arg_init(int argc, char **argv)
 {
@@ -12,6 +11,7 @@ arg_opt arg_init(int argc, char **argv)
         new.arg[i++] = strdup(argv[j]);
     new.arg[i] = 0;
     new.nb_arg = argc - 1;
+    new.clean_arg = NULL;
     return new;
 }
 
@@ -30,6 +30,7 @@ void    arg_start(arg_opt *tab)
             arg_end(*tab);
         }
     }
+    tab->clean_arg = arg_without_opt(tab->arg, tab);
 }
 
 void	arg_end(arg_opt tab)
@@ -42,6 +43,8 @@ void	arg_end(arg_opt tab)
     free(tab.options);
     for(int i = 0; tab.arg[i]; i++)
         free(tab.arg[i]);
+    if (tab.clean_arg != NULL)
+        free(tab.clean_arg);
     free(tab.arg);
     exit(0);
 }

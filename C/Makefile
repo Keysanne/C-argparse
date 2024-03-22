@@ -2,7 +2,6 @@ NAME= argparse
 COMPILER= gcc 
 OBJS=	${FILES:.c=.o}
 FILES=	arg.c	\
-		main.c	 \
 		utils.c	  \
 		argparse.c \
 		arg_start.c	   
@@ -10,10 +9,10 @@ FILES=	arg.c	\
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-		${COMPILER} ${OBJS} -o ${NAME} -g
+		ar rcs ${NAME} ${OBJS} 
 
 ${OBJS}: ${FILES}
-		${COMPILER} -c ${FILES} -g
+		${COMPILER} -c ${FILES}
 
 clean:
 		rm -f ${OBJS}

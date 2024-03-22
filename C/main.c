@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include "argparse.h"
+#include "arg.h"
 
 int main(int argc, char **argv)
 {
@@ -12,13 +11,14 @@ int main(int argc, char **argv)
 	init_options(&options, 'f', "float", FLOAT);
 	
 	/*HOW TO USE*/
-	arg_start(&options); //recup les args sans les options
+	arg_start(&options);
+	/*THE REAL ARG ARE IN THE CLEAN_ARG*/
 	void	*ret;
 	if ((ret = find_options(&options, "bool")) != NULL)
 		printf("bool true\n");
 	free(ret);
 	if ((ret = find_options(&options, "try")) != NULL)
-		printf("bool2 true\n");
+		printf("try true\n");
 	free(ret);
 	if ((ret = find_options(&options, "int")) != NULL)
 		printf("%d\n", *(int*)ret);
