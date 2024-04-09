@@ -21,7 +21,7 @@ void    arg_start(arg_opt *tab)
     for(int i = 0; tab->arg[i]; i++)
     {
         int valid = 0;
-        if (tab->arg[i][0] == '-' && (tab->arg[i][1] == '-' || isalpha(tab->arg[i][1]) > 0))
+        if (tab->arg[i][0] == '-' && (tab->arg[i][1] == '-' || isalpha(tab->arg[i][1]) > 0 || tab->arg[i][1] == '?'))
             multiple_definition(tab, i, &valid);
         if (valid == 1)
         {
