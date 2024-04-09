@@ -103,7 +103,7 @@ bool    add_to_options(arg_opt *tab, options opt)
 bool init_options(arg_opt *tab, char opt, char *fullname_opt, int type)
 {
     options new;
-    if (isalpha(opt) == 0)
+    if (isalpha(opt) == 0 && opt != '?')
         return false;
     already_defined(opt, fullname_opt, tab);
     if (type != BOOL && type != INT && type != CHAR && type != FLOAT)
