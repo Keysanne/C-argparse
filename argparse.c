@@ -1,6 +1,6 @@
 #include "argparse.h"
 
-void    *value(int j, int type, arg_opt *options, char *opt, char *fullname_opt)
+void    *value(int j, int type, arg_opt *options)
 {
     switch(type)
     {
@@ -41,9 +41,9 @@ void    *find_options(arg_opt *tab, char *fullname_opt)
         for(j = 0; tab->arg[j]; j++)
         {
             if(strcmp(tab->arg[j], tab->options[i].opt) == 0 || strcmp(tab->arg[j], tab->options[i].fullname_opt) == 0)
-                return value(j, tab->options[i].type, tab, tab->options[i].opt, tab->options[i].fullname_opt);
+                return value(j, tab->options[i].type, tab);
             else if(multiple_flags(tab->options[i], tab->arg[j], tab))
-                return value(j, tab->options[i].type, tab, tab->options[i].opt, tab->options[i].fullname_opt);
+                return value(j, tab->options[i].type, tab);
         }
     }
     return NULL;
