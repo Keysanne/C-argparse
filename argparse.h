@@ -14,5 +14,6 @@ bool    valid_int(char *str);
 bool    is_multiple_flags(char **arg, int x, arg_opt tab);
 void    update_arg(arg_opt *tab, int j, int type);
 void    multiple_definition(arg_opt *tab, int i, int *valid);
+bool    only_tiret(char *str);
 
 #endif
