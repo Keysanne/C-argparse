@@ -167,6 +167,11 @@ char    **arg_without_opt(char **arg, arg_opt *tab)
                 rst[j++] = arg[i];
                 size++;
             }
+            else if (only_tiret(arg[i]))
+            {
+                printf("Error: '%s' can't be an argument\n", arg[i]);
+                arg_end(*tab);
+            }
         }
     }
     rst[j] = 0;
