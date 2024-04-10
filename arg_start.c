@@ -159,7 +159,7 @@ char    **arg_without_opt(char **arg, arg_opt *tab)
     size++;
     for(int i = 0; arg[i]; i++)
     {
-        if (arg[i][0] != '-' || !arg[i][1])
+        if (arg[i][0] != '-')
         {
             if (not_an_option_arg(arg, i, tab))
             {
